@@ -17,6 +17,16 @@ public function DBtouroku($userID, $userpass){
 		$ps->execute();
 
 	}
-}
 
-public function 
+	public function getUsersTblById($getid){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM users WHERE user_id = ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getid,PDO::PARAM_INT);
+		$ps->execute();
+	
+		$searchArray = $ps->fetchAll();
+		return $searchArray;
+	};
+}
