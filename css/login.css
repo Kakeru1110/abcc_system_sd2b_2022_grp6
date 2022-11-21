@@ -13,9 +13,10 @@ body {
     height: 30px;
 }
 
-.error {
+.err_msg {
     color: red;
-}
+    font-size: 1.5em;
+  }
 
 .loginbtn {
     margin-top: 5%;
