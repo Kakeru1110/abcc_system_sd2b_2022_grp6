@@ -29,4 +29,40 @@ public function DBtouroku($userID, $userpass){
 		$searchArray = $ps->fetchAll();
 		return $searchArray;
 	}
+
+	public function getItemsTblByCategory_id($getcategoryid){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM items WHERE category_id = ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getcategoryid,PDO::PARAM_INT);
+		$ps->execute();
+	
+		$searchArray = $ps->fetchAll();
+		return $searchArray;
+	}
+
+	public function getItemsTblByItem_id($getitem_id){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM items WHERE item_id = ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getitemid,PDO::PARAM_INT);
+		$ps->execute();
+	
+		$searchArray = $ps->fetchAll();
+		return $searchArray;
+	}
+
+	public function getItemTblByKeyword($getkeyword){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM items WHERE item_name LIKE %?%";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getkeyword,PDO::PARAM_INT);
+		$ps->execute();
+	
+		$searchArray = $ps->fetchAll();
+		return $searchArray;
+	}
 }
