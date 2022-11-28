@@ -68,7 +68,7 @@ if (!empty($_POST)) {
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/login.css" rel="stylesheet" type="text/css" />
+        <link href="login.css" rel="stylesheet" type="text/css" />
         <title>ログイン画面</title>
     </head>
     <body>
