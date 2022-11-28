@@ -2,15 +2,15 @@
 class DBManager {
 	//接続のメソッド
 	private function dbConnect(){
-		$pdo = new PDO('mysql:host=localhost;dbname=webdb;charset=utf8',
-							'webuser', 'abccsd2');
+		$pdo = new PDO('mysql:host=mysql208.phy.lolipop.lan;dbname=LAA1417860-grp6;charset=utf8',
+							'LAA1417860', 'Kakeru1011');
 		return $pdo;
 	}
 
 public function DBtouroku($userID, $userpass){
 		$pdo = $this->dbConnect();
 
-		$sql = "INSERT INTO user_tbl("仮")(userID,userpass)VALUES(?,?)";
+		$sql = "INSERT INTO user_tbl(userID,userpass)VALUES(?,?)";
 		$ps = $pdo->prepare($sql);
 		$ps->bindValue(1,$_POST['userID'],PDO::PARAM_STR);
 		$ps->bindValue(2,$_POST['userpass'],PDO::PARAM_STR);
@@ -28,5 +28,5 @@ public function DBtouroku($userID, $userpass){
 	
 		$searchArray = $ps->fetchAll();
 		return $searchArray;
-	};
+	}
 }
