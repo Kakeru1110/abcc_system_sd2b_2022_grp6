@@ -28,8 +28,8 @@ if (!empty($_POST)) {
     $err_msg['email'] = '入力必須です';
   }
   // 文字数チェック
-  if (strlen($email) != 7 ) {
-    $err_msg['email'] = '7桁で入力してください';
+  if (strlen($email) != 7 || preg_match( '/^[0-9]+$/', '文字列') {
+    $err_msg['email'] = '半角数字7桁で入力してください';
   }
   // パスワードバリデーションチェック
   // 空白チェック
