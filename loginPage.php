@@ -2,16 +2,17 @@
  
 //セッションを使う
 session_start();
- 
+
 // 変数の初期化
 $email = '';
 $password = '';
 $err_msg = array();
 
-$data = array(
-    'email' => '2101167',
-    'password' => 'abcdefg'
-  );
+require_once 'DBmanager.php';
+$cls = new DBManager();
+$searchArray = $cls->getUsersTblById($_POST['email']);
+
+
   $err_msg['email'] = '';
   $err_msg['password'] = '';
  
@@ -44,7 +45,12 @@ if (!empty($_POST)) {
     $err_msg['password'] = '半角英数字で入力してください';
   }
   if($err_msg['email'] == "" && $err_msg['password'] == "" ){
-    if($data['password'] == $password){
+    foreach($searchArray as $row){
+      if($_POST['email'] == $row['user_id']){
+        $data = $row['user_password'];
+      }
+    }
+    if($data == $password){
       //セッションにemailアドレスを挿入する
       $_SESSION['email'] = $email;
       //マイページへ遷移
