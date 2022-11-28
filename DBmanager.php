@@ -57,12 +57,20 @@ public function DBtouroku($userID, $userpass){
 	public function getItemTblByKeyword($getkeyword){
 		$pdo = $this->dbConnect();
 	
-		$sql = "SELECT * FROM items WHERE item_name LIKE %?%";
+		$sql = "SELECT * FROM items WHERE item_name LIKE ?";
 		$ps = $pdo->prepare($sql);
-		$ps->bindValue(1,$getkeyword,PDO::PARAM_INT);
+		$ps->bindValue(1,'%'.$getkeyword.'%',PDO::PARAM_INT);
 		$ps->execute();
 	
 		$searchArray = $ps->fetchAll();
 		return $searchArray;
+	}
+
+	public function InsertCartTbl($getitemid,$getuserid){
+
+	}
+
+	public function UpdateCartTbl($getitemid){
+
 	}
 }
