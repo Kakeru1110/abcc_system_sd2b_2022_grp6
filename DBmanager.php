@@ -3,7 +3,7 @@ class DBManager {
 	//接続のメソッド
 	private function dbConnect(){
 		$pdo = new PDO('mysql:host=mysql208.phy.lolipop.lan;dbname=LAA1417860-grp6;charset=utf8',
-							'LAA1417860', 'Kakeru1011');
+							'LAA1417860', 'grp6kaihatu');
 		return $pdo;
 	}
 
@@ -42,6 +42,18 @@ public function DBtouroku($userID, $userpass){
 		return $searchArray;
 	}
 
+	public function getCategoriesTblByCategory_name($getcategoryname){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM categories WHERE category_name = ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getcategoryname,PDO::PARAM_STR);
+		$ps->execute();
+	
+		$searchArray = $ps->fetchAll();
+		return $searchArray;
+	}
+
 	public function getItemsTblByItem_id($getitem_id){
 		$pdo = $this->dbConnect();
 	
@@ -67,10 +79,20 @@ public function DBtouroku($userID, $userpass){
 	}
 
 	public function InsertCartTbl($getitemid,$getuserid){
-
+		$pdo = $this->dbConnect();
+	
+		$sql = "INSERT INTO carts(cart_id,item_id,user_id) VALUES (?,?,?)";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getkeyword,PDO::PARAM_INT);
+		$ps->execute();
 	}
 
 	public function UpdateCartTbl($getitemid){
-
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM carts WHERE item_name LIKE ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getkeyword,PDO::PARAM_INT);
+		$ps->execute();
 	}
 }
