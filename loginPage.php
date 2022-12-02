@@ -52,7 +52,7 @@ if (!empty($_POST)) {
     }
     if($data == $password){
       //セッションにemailアドレスを挿入する
-      $_SESSION['email'] = $email;
+      $_SESSION['user_id'] = $email;
       //マイページへ遷移
       header('Location:item.php');
       exit;
