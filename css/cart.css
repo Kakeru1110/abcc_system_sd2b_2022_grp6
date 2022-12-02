@@ -1,0 +1,14 @@
+.btn{
+    border: none;
+    border-radius: 100vh;
+}
+
+#kounyu-btn{
+    text-align: right;
+    background-color: orange;
+}
+
+#back-btn{
+    background-color: #CCCCCC;
+    margin-top: 10px;
+}

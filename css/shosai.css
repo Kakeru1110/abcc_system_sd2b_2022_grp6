@@ -1,0 +1,15 @@
+.btn{
+    text-align: center;
+    border-radius: 100vh;
+    width: 150px;
+    font-size: 15px;
+}
+
+.cart{
+    background-color: yellow;
+}
+
+.buy{
+    background-color: orange;
+    margin-top: 30px;
+}

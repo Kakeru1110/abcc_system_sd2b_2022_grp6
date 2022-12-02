@@ -1,0 +1,31 @@
+body{
+    text-align: center;
+}
+
+p{
+    font-size: 24px;
+}
+
+.p-style{
+    margin-top: 50px;
+}
+
+.btn{
+    border: none;
+    border-radius: 100vh;
+    font-size: 20px;
+    width: 100px;
+    height: 45px;
+}
+
+#back-btn{
+    padding: auto;
+    margin-right: 10px;
+    background-color: whitesmoke;
+}
+
+#buy-btn{
+    padding: auto;
+    margin-left: 10px;
+    background-color: orange;
+}

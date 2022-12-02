@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+}
+
+.p-style{
+    padding-top: 20%;
+    font-size: 24px;
+}
+
+#back-btn{
+    background-color: lightgreen;
+    border-radius: 100vh;
+    border: none;
+    width: 150px;
+    height: 50px;
+    margin: 40px;
+    font-size: 15px;
+}

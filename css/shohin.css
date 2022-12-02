@@ -1,0 +1,72 @@
+.search-bar{
+    text-align: center;
+}
+
+.search-box{
+    text-align: center;
+    border: none;
+    border-radius: 100vh;
+    width: 40%;
+    background-color: whitesmoke;
+}
+
+.search-btn{
+    border: none;
+    height: 15%;
+    background: none;
+}
+
+.img-parent{
+    column-count: 2;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5%;
+}
+
+.img-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.img-btn{
+    border: none;
+    background: none;
+}
+
+.image{
+    width: 90%;
+    padding: auto;
+}
+
+.btn-parent{
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    /*position: fixed; bottom: 10%;*/
+}
+
+.menu-btn{
+    border: none;
+    border-radius: 100vh;
+    background-color: lime;
+    width: 30%;
+    height: 150px;
+}
+
+#shohin-btn{
+    margin-right: 10%;
+}
+
+#cart-btn{
+    margin-left: 10%;
+}
+
+.ico{
+    width: 30%;
+}
