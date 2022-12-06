@@ -1,21 +1,27 @@
 <?php 
+    session_start();
     require_once 'DBmanager.php';
     $cls = new DBManager();
-    $searchArray = $cls->getItemTblByItem_id($_POST['itemid']);
+    $searchArray = $cls->getItemsTblByItem_id($_GET['itemid']);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="login.css" rel="stylesheet" type="text/css" />
-        <title>商品詳細画面</title>
+        <link href="css/shosai.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <form class="form-erea" method="POST" action="">
-            <?php 
-                echo $searchArray['item_name']."<br>";
-                echo $searchArray['item_price']."<br>";
-            ?>        
+        <?php
+            foreach($searchArray as $row){
+                echo    '<p>商品名　'.$row['item_name'].'</p>
+                <img src="./image/noimage.jpg" class="">
+                <p>価格　'.$row['item_price'].'</p>
+                <form action="cart.php" method="POST">
+                    <button name="incart" value="'.$row['item_id'].'">カートに入れる</button>
+                </form>';
+            } 
+        ?>
+        <form action="buyCheck.php" method="POST">
+            <button onclick="location.href='buyCheck.php'" class="buy btn" type="submit" value="<?php echo$_GET['itemid'];?>" name="itembuy">今すぐ購入</button>
         </form>
-        <script src="./login.css"></script>
     </body>
 </html>
