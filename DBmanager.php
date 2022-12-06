@@ -54,7 +54,15 @@ public function DBtouroku($userID, $userpass){
 		return $searchArray;
 	}
 
-	public function getItemsTblByItem_id($getitem_id){
+	public function getItemsTbl(){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM items";
+		$searchArray = $pdo->query($sql);
+		return $searchArray;
+	}
+
+	public function getItemsTblByItem_id($getitemid){
 		$pdo = $this->dbConnect();
 	
 		$sql = "SELECT * FROM items WHERE item_id = ?";
@@ -66,12 +74,12 @@ public function DBtouroku($userID, $userpass){
 		return $searchArray;
 	}
 
-	public function getItemTblByKeyword($getkeyword){
+	public function getItemsTblByKeyword($getkeyword){
 		$pdo = $this->dbConnect();
 	
 		$sql = "SELECT * FROM items WHERE item_name LIKE ?";
 		$ps = $pdo->prepare($sql);
-		$ps->bindValue(1,'%'.$getkeyword.'%',PDO::PARAM_INT);
+		$ps->bindValue(1,'%'.$getkeyword.'%',PDO::PARAM_STR);
 		$ps->execute();
 	
 		$searchArray = $ps->fetchAll();
@@ -81,18 +89,41 @@ public function DBtouroku($userID, $userpass){
 	public function InsertCartTbl($getitemid,$getuserid){
 		$pdo = $this->dbConnect();
 	
-		$sql = "INSERT INTO carts(cart_id,item_id,user_id) VALUES (?,?,?)";
+		$sql = "INSERT INTO carts(item_id,user_id) VALUES (?,?)";
 		$ps = $pdo->prepare($sql);
-		$ps->bindValue(1,$getkeyword,PDO::PARAM_INT);
+		$ps->bindValue(1,$getitemid,PDO::PARAM_INT);
+		$ps->bindValue(2,$getuserid,PDO::PARAM_INT);
 		$ps->execute();
 	}
 
-	public function UpdateCartTbl($getitemid){
+	public function DeleteCartTblByUserid($getuserid){
 		$pdo = $this->dbConnect();
 	
-		$sql = "SELECT * FROM carts WHERE item_name LIKE ?";
+		$sql = "DELETE FROM carts WHERE user_id = ?";
 		$ps = $pdo->prepare($sql);
-		$ps->bindValue(1,$getkeyword,PDO::PARAM_INT);
+		$ps->bindValue(1,$getuserid,PDO::PARAM_INT);
 		$ps->execute();
+	}
+
+	public function DeleteCartTblByUseridItemid($getuserid,$getitemid){
+		$pdo = $this->dbConnect();
+	
+		$sql = "DELETE FROM carts WHERE user_id = ? AND item_id = ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getuserid,PDO::PARAM_INT);
+		$ps->bindValue(2,$getitemid,PDO::PARAM_INT);
+		$ps->execute();
+	}
+
+	public function getCartTblByUserid($getuserid){
+		$pdo = $this->dbConnect();
+	
+		$sql = "SELECT * FROM carts WHERE user_id = ?";
+		$ps = $pdo->prepare($sql);
+		$ps->bindValue(1,$getuserid,PDO::PARAM_INT);
+		$ps->execute();
+	
+		$searchArray = $ps->fetchAll();
+		return $searchArray;
 	}
 }
