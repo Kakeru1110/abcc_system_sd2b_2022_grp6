@@ -71,11 +71,18 @@ if (!empty($_POST)) {
         <link href="login.css" rel="stylesheet" type="text/css" />
         <title>ログイン画面</title>
     </head>
-    <body>
+    <body style="background:#e4edfc;">
         <form class="form-erea" method="POST" action="">
+        <img src="image/logo_touka2.png" style="width: 400px; height: 100px;"><br><br>
             メールアドレス・会員ID<br>
             <div class="err_msg"><?php echo $err_msg['email']; ?></div>
-            <input type="text" class="forms" name="email"><br><br>
+            <?php
+              if(isset($_SESSION['user_id'])){
+                echo '<input type="text" class="forms" name="email" value="'.$_SESSION['user_id'].'"><br><br>';
+              }else{
+                echo '<input type="text" class="forms" name="email"><br><br>';
+              }
+            ?>
             パスワード<br>
             <div class="err_msg"><?php echo $err_msg['password']; ?></div>
             <input type="password" class="forms" name="password"><br>
