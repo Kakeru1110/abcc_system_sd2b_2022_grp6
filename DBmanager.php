@@ -105,13 +105,12 @@ public function DBtouroku($userID, $userpass){
 		$ps->execute();
 	}
 
-	public function DeleteCartTblByUseridItemid($getuserid,$getitemid){
+	public function DeleteCartTblByCartid($getcartid){
 		$pdo = $this->dbConnect();
 	
-		$sql = "DELETE FROM carts WHERE user_id = ? AND item_id = ?";
+		$sql = "DELETE FROM carts WHERE cart_id = ?";
 		$ps = $pdo->prepare($sql);
-		$ps->bindValue(1,$getuserid,PDO::PARAM_INT);
-		$ps->bindValue(2,$getitemid,PDO::PARAM_INT);
+		$ps->bindValue(1,$getcartid,PDO::PARAM_INT);
 		$ps->execute();
 	}
 
@@ -125,5 +124,12 @@ public function DBtouroku($userID, $userpass){
 	
 		$searchArray = $ps->fetchAll();
 		return $searchArray;
+	}
+
+	public function userSessionCheck(){
+		if(!(isset($_SESSION['user_id']))){
+			header('Location:loginPage.php');
+      		exit;
+		}
 	}
 }
