@@ -17,3 +17,10 @@
 a{
     text-decoration: none;
 }
+
+.center{
+    display       : inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
