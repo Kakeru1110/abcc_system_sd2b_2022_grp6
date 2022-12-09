@@ -1,5 +1,6 @@
 body{
     text-align: center;
+	font-family: "M PLUS Rounded 1c";
 }
 
 p{
@@ -26,6 +27,6 @@ p{
 
 #buy-btn{
     padding: auto;
-    margin-left: 10px;
+    margin-right: 10px;
     background-color: orange;
 }
