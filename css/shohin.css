@@ -27,7 +27,6 @@ font-family: "M PLUS Rounded 1c";
 }
 
 .img-parent{
-    column-count: 2;
     justify-content: center;
     width: 100%;
     margin-top: 5%;
@@ -38,8 +37,6 @@ font-family: "M PLUS Rounded 1c";
 
 .img-list{
     list-style: none;
-    display: flex;
-    justify-content: center;
     margin-bottom: 20px;
 }
 
