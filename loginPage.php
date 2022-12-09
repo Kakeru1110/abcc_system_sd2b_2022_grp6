@@ -68,6 +68,7 @@ if (!empty($_POST)) {
 <!DOCTYPE html>
 <html>
     <head>
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
         <link href="login.css" rel="stylesheet" type="text/css" />
         <title>ログイン画面</title>
     </head>
