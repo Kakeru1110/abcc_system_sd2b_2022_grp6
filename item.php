@@ -10,10 +10,11 @@
 <html>
     <head>
         <title>商品一覧</title>
-        <link href="css/shohin.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <body style="background:#e4edfc;">
+	<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+        <link href="css/shohin.css" rel="stylesheet" type="text/css" />
+    <body>
     <nav class="navbar navbar-dark bg-dark mb-4" aria-label="First navbar example">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img src="image/logo_touka2.png" style="width:200px; height: 40px;"></a>
@@ -27,7 +28,7 @@
                     <a class="nav-link active" aria-current="page" href="item.php">ホーム</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="cart.php">カート</a>
+                    <a class="nav-link active" href="cart.php">買い物かご</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" href="loginPage.php">ログアウト</a>
@@ -36,6 +37,7 @@
               </div>
             </div>
         </nav>
+        <div class="container">
         <div class="search-bar">
         <form action="" method="POST" id="form1">
             <input class="search-box" style="height: 40px;" type="text" placeholder="🔍キーワード検索" name="keyword" id="sbox">
@@ -52,46 +54,49 @@
         </div>
         <div id="column" class="column03">
             <form action="itemDetail.php" method="GET">
+		 <div class="row">
             <ul class="img-parent">
                 <?php 
                     if(isset($_POST['keysearch'])){
-                        $iteminfo = $cls->getItemsTblByKeyword($_POST['keyword']);
+                        $iteminfo = $cls->getItemsTblByKeyword($_POST['keyword']);      
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }else if(isset($_POST['sentakuki'])){
                         $iteminfo = $cls->getItemsTblByCategory_id(1);
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }else if(isset($_POST['reizouko'])){
                         $iteminfo = $cls->getItemsTblByCategory_id(2);
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }else if(isset($_POST['dennsirenzi'])){
                         $iteminfo = $cls->getItemsTblByCategory_id(3);
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }else if(isset($_POST['sennpuuki'])){
                         $iteminfo = $cls->getItemsTblByCategory_id(4);
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }else if(isset($_POST['souziki'])){
                         $iteminfo = $cls->getItemsTblByCategory_id(5);
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }else{
                         foreach($iteminfo as $row){
-                            echo '<li class="img-list"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li>';
+                            echo '<div class="col-lg-4 col-md-6"><li class="img-list img-fluid"><a href="itemDetail.php?itemid='.$row['item_id'].'"><img class="image" src="./image/'.$row['item_id'].'.jpg" width="300" height="300"><p>'.$row['item_name'].'</p><span>'.$row['item_price'].'円</span></a></li></div>';
                         }
                     }
                 ?>
             </ul>
+	    </div>
             </form>
+            </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
