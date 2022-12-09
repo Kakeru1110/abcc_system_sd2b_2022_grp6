@@ -25,9 +25,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/cart.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+        <link href="css/cart.css" rel="stylesheet" type="text/css" />  
         <title>カート</title>
     </head>
     <body style="background:#e4edfc;">
@@ -44,7 +45,7 @@
                     <a class="nav-link active" aria-current="page" href="item.php">ホーム</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="cart.php">カート</a>
+                    <a class="nav-link active" href="cart.php">買い物かご</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" href="loginPage.php">ログアウト</a>
@@ -54,6 +55,7 @@
             </div>
         </nav>
     <div class="cart">
+      <h1>買い物かご</h1>
     <?php
         
         if(isset($cart)){
@@ -62,7 +64,7 @@
                 $id = $row['cart_id'];
                 $cart_item = $cls->getItemsTblByItem_id($row['item_id']);
                 foreach($cart_item as $data){
-                    echo '<ul　class="list_design027"><li><span>'.$data['item_name'].'　'.$data['item_price'].'円 <form action="" method="POST"><input type="submit" value="カートから削除" name="'.$id.'"></form></span></li></ul>';
+                    echo '<ul class="list_design027"><li><img class="image" src="./image/'.$data['item_id'].'.jpg" width="300" height="300"><span>'.$data['item_name'].'　'.$data['item_price'].'円 <form action="" method="POST"><input type="submit" class="deletebtn" value="カートから削除" name="'.$id.'"></form></span></li></ul>';
                     $cntitem++;
                     $sumprice += $data['item_price'];
                 }
