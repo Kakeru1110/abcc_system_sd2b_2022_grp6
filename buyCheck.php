@@ -8,9 +8,10 @@
 <html>
     <head>
         <title>購入チェック</title>
-        <link href="css/kounyucheck.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+        <link href="css/kounyucheck.css" rel="stylesheet" type="text/css" />
     </head>
     <body style="background:#e4edfc;">
     <nav class="navbar navbar-dark bg-dark mb-4" aria-label="First navbar example">
@@ -26,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="item.php">ホーム</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="cart.php">カート</a>
+                    <a class="nav-link active" href="cart.php">買い物かご</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" href="loginPage.php">ログアウト</a>
