@@ -1,3 +1,12 @@
+body{
+    background-color:#e4edfc;
+    background-image: url('/image/R.jpg');
+    background-size:  contain;
+    background-size:  auto;
+font-family: "M PLUS Rounded 1c";
+  }
+
+
 .search-bar{
     text-align: center;
 }
@@ -77,6 +86,8 @@
 	margin: 0 -10px;
 	display: flex;
 	flex-wrap: wrap;
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
 #column li {
@@ -87,16 +98,21 @@
 #column li a:visited {
 	text-decoration: none;
 	color: #111;
+	background-color: white;
 }
 
 #column li p {
-	font-size: 90%;
+	font-size: 200%;
 	margin-bottom: 3px;
+    text-align: center;
+	
 }
 
 #column li span {
-	font-size: 80%;
+	font-size: 200%;
 	display: block;
+	text-align: center;
+	
 }
 
 .column02 li {
@@ -104,7 +120,7 @@
 }
 
 .column03 li {
-	width: calc(33.3333% - 20px);
+	/*width: calc(33.3333% - 20px);*/
 }
 
 .column04 li {
@@ -136,4 +152,9 @@
     background    : #ffffff;     /* 文字色     */
   }
 
-  
+#sbtn{
+	border: none;
+    background-color: #3879D9;
+    color: white;
+    border-radius: 20px;
+}
