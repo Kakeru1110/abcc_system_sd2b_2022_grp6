@@ -56,6 +56,8 @@
         </nav>
     <div class="cart">
       <h1>買い物かご</h1>
+    <div class="container">
+      <div class="row">
       <ul class="list_design027">
     <?php
         
@@ -65,7 +67,7 @@
                 $id = $row['cart_id'];
                 $cart_item = $cls->getItemsTblByItem_id($row['item_id']);
                 foreach($cart_item as $data){
-                    echo '<li><img class="image" src="./image/'.$data['item_id'].'.jpg" width="300" height="300"><span>'.$data['item_name'].'　'.$data['item_price'].'円 <form action="" method="POST"><input type="submit" class="deletebtn" value="カートから削除" name="'.$id.'"></form></span></li>';
+                    echo '<div class="col-lg-4 col-md-6"><li><img class="image" src="./image/'.$data['item_id'].'.jpg" width="300" height="300"><br><span>'.$data['item_name'].'　'.$data['item_price'].'円 <form action="" method="POST"><input type="submit" class="deletebtn" value="カートから削除" name="'.$id.'"></form></span></li></div>';
                     $cntitem++;
                     $sumprice += $data['item_price'];
                 }
@@ -74,7 +76,7 @@
             echo "<h1>カートに商品がありません</h1>";
         }
     
-        echo '</ul><p>商品数　　'.$cntitem.'点</p>
+        echo '</ul></div></div><p>商品数　　'.$cntitem.'点</p>
         <p>合計金額　　'.$sumprice.'円</p>
         <form action="buyCheck.php" method="GET">
             <a class="btn" id="kounyu-btn" href="buyCheck.php?cntitem='.$cntitem.'&sumprice='.$sumprice.'">購入</a><br>
