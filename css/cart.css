@@ -28,6 +28,8 @@ body{
 
 ul{
     display: flex;
+    flex-wrap: wrap;
+    padding-right: 20px;
 }
 
 .list_design027 {
@@ -40,7 +42,6 @@ ul{
     background: rgba(244, 160, 6, 0.1);
     margin-bottom: 5px;
     padding: 0.5rem;
-    width: 25%;
   }
 
 .deletebtn{
