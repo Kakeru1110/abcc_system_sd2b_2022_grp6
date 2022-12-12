@@ -30,3 +30,17 @@ p{
     margin-right: 10px;
     background-color: orange;
 }
+
+.nav-item:hover{
+	font-size:30px;
+	border-bottom: 2px solid  #3b72edbf;
+	transition:1s;
+}
+
+#back-btn:hover {
+	background:#bdbfc0
+}
+
+#buy-btn:hover {
+	background:#cd8502;
+}

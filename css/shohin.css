@@ -89,6 +89,8 @@ font-family: "M PLUS Rounded 1c";
 
 #column li {
 	padding: 0 10px 20px;
+    animation-name: wide-scale;
+    animation-duration: 1.5s;
 }
 
 #column li a,
@@ -154,4 +156,24 @@ font-family: "M PLUS Rounded 1c";
     background-color: #3879D9;
     color: white;
     border-radius: 20px;
+}
+
+@keyframes wide-scale {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity:100%;
+    }
+}
+
+.nav-item:hover{
+	font-size:30px;
+	border-bottom: 2px solid  #3b72edbf;
+	transition:1s;
+}
+
+#sbtn:hover {
+	background:white;
+		color:#3879D9;
 }
