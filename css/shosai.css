@@ -18,6 +18,8 @@ margin-top: 10px;
 .buy{
     background-color: orange;
     margin-top: 30px;
+    transition    : .3s;         
+    box-shadow    : 2px 2px #666666;
 }
 
 a{
@@ -32,12 +34,16 @@ p{
     padding: auto;
     background-color: whitesmoke;
     margin-bottom: 20px;
+    transition    : .3s;         
+    box-shadow    : 2px 2px #666666;
 }
 
 .incart{
-	    background-color: tomato;
+	    background-color: rgb(226, 38, 5);
     color: white;
     border: ridge;
+    transition    : .3s;         
+    box-shadow    : 2px 2px #666666;
 }
 
 .nav-item:hover{
@@ -48,13 +54,34 @@ p{
 
 .btn:hover {
     background: #da9905;
+    box-shadow    : none; 
   }
   
   #back-btn:hover {
-      background:#b9b7b7
+      background:#b9b7b7;
+      box-shadow    : none; 
   }
   
   .incart:hover {
-      background:#ef2828
+      background:#750202;
+      box-shadow    : none; 
   }
+
+  .logoimg{
+    width:200px; height: 40px;
+     animation: slideIn 1s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+    }
+    
+    @keyframes slideIn {
+      0% {
+        transform: translateX(180px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+      }
+      40%,100% {
+        opacity: 1;
+      }
+    }
   

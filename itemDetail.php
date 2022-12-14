@@ -15,7 +15,7 @@
     <body style="background:#e4edfc;">
     <nav class="navbar navbar-dark bg-dark mb-4" aria-label="First navbar example">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><img src="image/logo_touka2.png" style="width:200px; height: 40px;"></a>
+              <a class="navbar-brand" href="#"><img class="logoimg" src="image/logo_touka2.png"></a>
               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
