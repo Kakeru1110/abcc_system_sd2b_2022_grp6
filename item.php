@@ -4,6 +4,7 @@
     $cls = new DBManager();
     $cls->userSessionCheck();
     $iteminfo = $cls -> getItemsTbl();
+    //test
 ?>
 
 <!DOCTYPE html>
