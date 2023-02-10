@@ -9,3 +9,4 @@
 
 
 webサイトURL：http://muku-0609.catfood.jp/loginPage.php
+ログイン用ユーザーアカウント:id 1234567 pass testuser
